@@ -336,4 +336,14 @@ button {
     font-size:40px;
 }
 
+@media (max-width: 576px){
+    .search-bar{
 
+        display: none !important;
+
+    }
+
+    .buttons-container{
+        display: none;
+    }
+}
