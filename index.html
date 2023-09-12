@@ -3,10 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLINE COMMERCE</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <div>Carlos Almejanro</div>
-    <div>nuevo elemento</div>
+<style>
+    /* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de navegación superior */
+.navbar {
+    background-color: orange;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-bar select {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.company-icon {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Menú lateral */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease-in;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+/* Estilos adicionales para hacerlo responsive */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .menu-icon button {
+        font-size: 20px;
+    }
+
+    .search-bar select {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .navbar-right {
+        display: none;
+    }
+
+    #sidebar {
+        left: -250px;
+    }
+
+    #sidebar.active {
+        left: -100%;
+    }
+}
+
+</style>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="menu-icon">
+                <!-- Icono de menú para abrir el menú lateral -->
+                <button id="menu-button" onclick="toggleSidebar()">☰</button>
+            </div>
+            <div class="search-bar">
+                <!-- Barra de búsqueda -->
+                <select id="filter-select">
+                    <option value="option1">Opción 1</option>
+                    <option value="option2">Opción 2</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+                <button id="search-button">Buscar</button>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <!-- Icono de la compañía -->
+            <div class="company-icon">Company Logo</div>
+        </div>
+    </nav>
+
+    <!-- Menú lateral -->
+    <aside id="sidebar">
+        <!-- Contenido del menú lateral aquí -->
+    </aside>
+
+    <script>
+        // Función para mostrar/ocultar el menú lateral
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
