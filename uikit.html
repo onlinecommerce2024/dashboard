@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONLINE COMMERCE</title>
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css"
+    />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+  </head>
+  <body>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+
+        }
+      nav {
+        background: #ff6b00 !important;
+      }
+      .icono-nav {
+        padding-left: 85%;
+        width: 50%;
+      }
+      aside {
+        color: #000;
+        width: 250px;
+        padding-left: 20px;
+        height: 70vh;
+        background-image: linear-gradient(30deg, #fff, #fff);
+        border: #000 1px solid;
+        border-top: #ff0000 4px solid;
+        border-bottom: #ff0000 4px solid;
+        border-radius: 15px ;
+        margin-top: 5%;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #ff0000;
+        border-width: 15px 0px 15px 0px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      aside a {
+        font-size: 12px;
+        color: #000;
+        display: block;
+        padding: 12px;
+        padding-left: 30px;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      aside a:hover {
+        color: #3f5efb;
+        background: #fff;
+        outline: none;
+        position: relative;
+        background-color: #fff;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      aside a i {
+        margin-right: 5px;
+      }
+
+      aside a:hover::after {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        bottom: 100%;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        border-bottom-right-radius: 18px;
+        box-shadow: 0 20px 0 0 #fff;
+      }
+
+      aside a:hover::before {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        top: 38px;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        border-top-right-radius: 18px;
+        box-shadow: 0 -20px 0 0 #fff;
+      }
+
+      aside p {
+        margin: 0;
+        padding: 40px 0;
+      }
+      .buscar{
+        color: #fff;
+      }
+      .input-buscar{
+        border-radius: 10px;
+      }
+
+    </style>
+
+<nav class="uk-navbar-container">
+    <div class="uk-container">
+      <div uk-navbar>
+        <div class="uk-navbar-left ">
+          <a class="uk-navbar-item uk-logo" href="#"><img class="menu" src="images/menu-1-2.png"></a>
+        </div>
+
+          
+          <div class="uk-navbar-right">
+            <div class="uk-navbar-item">
+              <form action="javascript:void(0)">
+                <input
+                  class="uk-input uk-form-width-medium input-buscar"
+                  type="text"
+                  placeholder="Input"
+                  aria-label="Input"
+                />
+                <select class="uk-select uk-form-width-small">
+                    <option>Todos</option>
+                    <option>Nuevos</option>
+                </select>
+                <button class="uk-button uk-button-default buscar">Buscar</button>
+              </form>
+            </div>
+          </div>
+          
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li>
+              <a href="#" class="icono-nav">
+                <img class="Logo" src="images/Logo.png" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+    <aside>
+      <a href="javascript:void(0)">
+        <img class="Icon" src="images/CasaInicio.png">
+        Inicio
+      </a>
+      <a href="javascript:void(0)">
+        <i class="fa fa-laptop" aria-hidden="true"></i>
+        Computers
+      </a>
+      <a href="javascript:void(0)">
+        <i class="fa fa-clone" aria-hidden="true"></i>
+        Shared with me
+      </a>
+      <a href="javascript:void(0)">
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        Starred
+      </a>
+      <a href="javascript:void(0)">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        Trash
+      </a>
+    </aside>
+
+    <div class="content">
+
+
+    </div>
+
+
+  </body>
+</html>
