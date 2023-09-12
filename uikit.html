@@ -17,10 +17,9 @@
   </head>
   <body>
     <style>
-        body{
-            font-family: Arial, sans-serif;
-
-        }
+      body {
+        font-family: Arial, sans-serif;
+      }
       nav {
         background: #ff6b00 !important;
       }
@@ -37,7 +36,7 @@
         border: #000 1px solid;
         border-top: #ff0000 4px solid;
         border-bottom: #ff0000 4px solid;
-        border-radius: 15px ;
+        border-radius: 15px;
         margin-top: 5%;
         background: rgba(255, 255, 255, 0.85);
         border-radius: 10px;
@@ -48,7 +47,7 @@
       }
 
       aside a {
-        font-size: 12px;
+        font-size: 16px;
         color: #000;
         display: block;
         padding: 12px;
@@ -99,23 +98,104 @@
         margin: 0;
         padding: 40px 0;
       }
-      .buscar{
+      .buscar {
         color: #fff;
       }
-      .input-buscar{
+      .input-buscar {
         border-radius: 10px;
       }
+      .container {
+        display: flex; /* Utiliza flexbox para organizar los elementos */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no haya suficiente espacio */
+        justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+        align-items: flex-start; /* Alinea los elementos al principio del contenedor verticalmente */
+      }
+
+      aside {
+        width: 250px; /* Ancho del aside */
+        margin-top: 5%;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        /* display: none; */
+      }
+
+      .content {
+        flex-grow: 1; /* Permite que el contenido ocupe todo el espacio restante */
+        padding: 20px; /* Espaciado interior del contenido principal */
+      }
+
+      /* Media query para dispositivos móviles */
+      @media (max-width: 768px) {
+
+        aside {
+          width: 50%; /* El aside ocupará todo el ancho en dispositivos móviles */
+          margin-top: 0; /* Elimina el margen superior en dispositivos móviles */
+          margin: 0;
+          display: none;
+        }
+        .content {
+          margin-left: 0px !important;
+        }
+        .card{
+            width: 70vh;
+        }
+        .container {
+            display: block;
+            width: 100%;
+        }
+      }
+
+    .Cuadro1 {
+    width: 90%;
+    height: 150px;
+    background-color: #ffffff;
+
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #ff0000;
+    border-width: 10px 0px 0px 0px;
+    }
+    .hidden {
+        display: none;
+    }
+    .container {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Define dos columnas: el aside y el contenido */
+  grid-gap: 20px; /* Espacio entre las columnas */
+}
+
+aside {
+  width: 250px; /* Ancho fijo del aside */
+  padding: 20px;
+
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas de tamaño mínimo 300px y se ajustan automáticamente */
+  grid-gap: 20px; /* Espacio entre los cards */
+
+}
+
+.card {
+    width: 100% !important;
+  padding: 20px;
+
+
+}
+
 
     </style>
 
-<nav class="uk-navbar-container">
-    <div class="uk-container">
-      <div uk-navbar>
-        <div class="uk-navbar-left ">
-          <a class="uk-navbar-item uk-logo" href="#"><img class="menu" src="images/menu-1-2.png"></a>
-        </div>
+    <nav class="uk-navbar-container">
+      <div class="uk-container">
+        <div uk-navbar>
+          <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo" id="toggleButton" href="#"
+              ><img class="menu" src="images/menu-1-2.png"
+            /></a>
+          </div>
 
-          
           <div class="uk-navbar-right">
             <div class="uk-navbar-item">
               <form action="javascript:void(0)">
@@ -126,56 +206,140 @@
                   aria-label="Input"
                 />
                 <select class="uk-select uk-form-width-small">
-                    <option>Todos</option>
-                    <option>Nuevos</option>
+                  <option>Todos</option>
+                  <option>Nuevos</option>
                 </select>
-                <button class="uk-button uk-button-default buscar">Buscar</button>
+                <button class="uk-button uk-button-default buscar">
+                  Buscar
+                </button>
               </form>
             </div>
           </div>
-          
-        <div class="uk-navbar-right">
-          <ul class="uk-navbar-nav">
-            <li>
-              <a href="#" class="icono-nav">
-                <img class="Logo" src="images/Logo.png" />
-              </a>
-            </li>
-          </ul>
+
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#" class="icono-nav">
+                  <img class="Logo" src="images/Logo.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+    </nav>
+
+    <div class="container">
+      <aside id="myAside">
+        <a href="javascript:void(0)">
+          <img class="Icon" src="images/CasaInicio.png" />
+          Inicio
+        </a>
+        <a href="javascript:void(0)">
+          <img class="Icon" src="images/lupa.png" />
+          Busqueda
+        </a>
+        <a href="javascript:void(0)">
+          <img class="Icon" src="images/ajustes.png" />
+          Ajustes
+        </a>
+        <a href="javascript:void(0)">
+          <img class="Icon" src="images/Perfil.png" />
+          Perfil
+        </a>
+        <a href="javascript:void(0)">
+          <img class="Icon" src="images/Campana.png" />
+          Notificaciones
+        </a>
+      </aside>
+
+      <div class="content">
+
+            <div class="card">
+                <!-- Contenido de la tarjeta 1 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Contenido de la tarjeta 2 -->
+                <div class="Cuadro1">
+                Cuadro2
+                <div class="Ganancias">Ganancias</div>
+                <div class="Valor">$300.000</div>
+                </div>
+            </div>
+
+
+
     </div>
-  </nav>
-  
-
-    <aside>
-      <a href="javascript:void(0)">
-        <img class="Icon" src="images/CasaInicio.png">
-        Inicio
-      </a>
-      <a href="javascript:void(0)">
-        <i class="fa fa-laptop" aria-hidden="true"></i>
-        Computers
-      </a>
-      <a href="javascript:void(0)">
-        <i class="fa fa-clone" aria-hidden="true"></i>
-        Shared with me
-      </a>
-      <a href="javascript:void(0)">
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        Starred
-      </a>
-      <a href="javascript:void(0)">
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-        Trash
-      </a>
-    </aside>
-
-    <div class="content">
+    <script>
 
 
-    </div>
+            const aside = document.getElementById("myAside");
+            const toggleButton = document.getElementById("toggleButton");
 
+            // Agrega un manejador de clic al botón
+            toggleButton.addEventListener("click", function () {
+            // Alternar la clase CSS para ocultar/mostrar el aside
+            aside.classList.toggle("hidden");
+            });
+
+
+
+
+    </script>
 
   </body>
 </html>
