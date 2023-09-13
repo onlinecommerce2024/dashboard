@@ -124,7 +124,7 @@
       }
 
       /* Media query para dispositivos móviles */
-      @media (max-width: 768px) {
+      @media (max-width: 768px) { 
 
         aside {
           width: 50%; /* El aside ocupará todo el ancho en dispositivos móviles */
@@ -143,6 +143,8 @@
             width: 100%;
         }
       }
+      
+    
 
     .Cuadro1 {
     width: 90%;
@@ -158,7 +160,7 @@
     .hidden {
         display: none;
     }
-    .container {
+.container {
   display: grid;
   grid-template-columns: 250px 1fr; /* Define dos columnas: el aside y el contenido */
   grid-gap: 20px; /* Espacio entre las columnas */
@@ -178,12 +180,17 @@ aside {
 }
 
 .card {
-    width: 100% !important;
+  width: 100% !important;
   padding: 20px;
 
 
 }
+@media (max-width:1200px) {
+  .content{
+    width: 100%;
+  }
 
+}
 
     </style>
 
