@@ -1,0 +1,60 @@
+body{
+    background-color:#ffffff;
+}
+
+
+
+.barra1 {
+    box-sizing: border-box;
+    background: #ff6b00;
+    height: 111px;
+    position: relative;
+    max-width: 100%;
+}
+
+.barraDelgada{
+    width: 99%;
+    position:absolute;
+    background-color: #ff6b00;
+    height: 10px;
+    top:125px;
+}
+
+.CarritoError {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left:55%;
+}
+
+h1{
+    position: absolute;
+    left:100px;
+    top:200px;
+    font-family:monospace;
+    font-size: 40px;
+}
+.mensaje1 {
+    position: absolute;
+    left:150px;
+    top:340px;
+    font-size: 18px;
+    color: #555;
+}
+.mensaje2 {
+    position: absolute;
+    left:150px;
+    top:370px;
+    font-size: 18px;
+    color: #555;
+}
+
+.volver {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #ff6b00; 
+    color: white;  
+    border-radius: 5px;
+    left:150px;
+    top:500px;
+}
