@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONLINE COMMERCE</title>
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css"
+    />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+  </head>
+<body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #F0F2F5;
+      }
+      nav {
+        background: #ff6b00 !important;
+      }
+      .icono-nav {
+        padding-left: 85%;
+        width: 50%;
+      }
+      aside {
+        color: #000;
+        width: 250px;
+        padding-left: 20px;
+        height: 70vh;
+        background-image: linear-gradient(30deg, #fff, #fff);
+        border: #000 1px solid;
+        border-top: #ff0000 4px solid;
+        border-bottom: #ff0000 4px solid;
+        border-radius: 15px;
+        margin-top: 5%;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #ff0000;
+        border-width: 15px 0px 15px 0px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      aside a {
+        font-size: 16px;
+        color: #000;
+        display: block;
+        padding: 12px;
+        padding-left: 30px;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      aside a:hover {
+        color: #3f5efb;
+        background: #fff;
+        outline: none;
+        position: relative;
+        background-color: #fff;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      aside a i {
+        margin-right: 5px;
+      }
+
+      aside a:hover::after {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        bottom: 100%;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        border-bottom-right-radius: 18px;
+        box-shadow: 0 20px 0 0 #fff;
+      }
+
+      aside a:hover::before {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        top: 38px;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        border-top-right-radius: 18px;
+        box-shadow: 0 -20px 0 0 #fff;
+      }
+
+      aside p {
+        margin: 0;
+        padding: 40px 0;
+      }
+      .buscar {
+        color: #fff;
+      }
+      .input-buscar {
+        border-radius: 10px;
+      }
+      .container {
+        display: flex; /* Utiliza flexbox para organizar los elementos */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no haya suficiente espacio */
+        justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+        align-items: flex-start; /* Alinea los elementos al principio del contenedor verticalmente */
+      }
+
+      aside {
+        width: 250px; /* Ancho del aside */
+        margin-top: 5%;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        /* display: none; */
+      }
+
+      .formulario {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          max-width: 400px;
+          width: 100%;
+          margin-top: 30px;
+      }
+
+      h1 {
+          color: #ff6b00;
+          text-align: center;
+      }
+      label{
+        font-weight: 50%;
+        font-size: 18px;
+      }
+
+  
+
+      label,
+      input {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+          width: 90%;
+      }
+
+      input {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+      }
+
+      input[type="submit"] {
+          background-color: #ff6b00;
+          color: #fff;
+          cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+          background-color: #ff8000;
+      }
+
+      .footer {
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 10px;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+
+      }
+
+      .olvide{
+        color:chocolate;
+      }
+      .registraruser{
+        margin-top: 2px;
+      }
+
+
+  </style>
+        <header>    
+            <nav class="uk-navbar-container">
+                <div class="uk-container">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" id="toggleButton" href="#"
+                        ><img class="menu" src="menu-1-2.png"
+                    /></a>
+
+
+                    </div>
+
+                    <div class="uk-navbar-right">
+                    <div class="uk-navbar-item">
+                        <form action="javascript:void(0)">
+                        <input
+                            class="uk-input uk-form-width-medium input-buscar"
+                            type="text"
+                            placeholder="Input"
+                            aria-label="Input"
+                        />
+                        <select class="uk-select uk-form-width-small">
+                            <option>Todos</option>
+                            <option>Nuevos</option>
+                        </select>
+                        <button class="uk-button uk-button-default buscar">
+                            Buscar
+                        </button>
+                        </form>
+                    </div>
+                    </div>
+
+
+                    <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li>
+                        <a href="#" class="icono-nav">
+                            <img class="Logo" src="Logo.png" />
+                        </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <center>
+        <div class="formulario">
+            <h2>Bienvendenido a OnlineCommerce</h2>
+            <h3 class="registraruser">Registrar usuario</h3>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre completo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Ingrese su correo electronico">
+                <label for="contrasena">Fecha Nacimiento:</label>
+                <input type="fecha" id="fecha" name="fecha" required placeholder="Ingrese su Fecha de nacimiento">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required placeholder="Ingrese su contraseña">
+                <input type="submit" value="Registrarse">
+                <a href="#" class="olvide">Olvide contraseña</a>
+            </form>
+        </div>
+        <center>
+
+          
+          <br>
+
+
+          <footer>
+            <p>&copy; 2023 OnlineCommerce</p>
+        </footer>
+
+
+</body>
+</html>
