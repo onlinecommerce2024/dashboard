@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.body {
+    background-color: #EFF0F5;
+}
+
+.navbar {
+    background-color: #fcbf4f;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px #dfdede;
+    margin-bottom: 20px;
+}
+
+
+
+.search {
+  display: inline-block;
+  position: relative;
+  margin-top: 0px;
+}
+
+.search input[type="text"] {
+  width: 300px;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search button[type="submit"] {
+  background-color: #f8a232;
+  height: 50px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .9s ease;
+}
+
+.search button[type="submit"]:hover {
+  transform: scale(1.1);
+  color: rgb(255, 255, 255);
+  background-color: blue;
+}
+
+.button-container {
+  display: flex;
+  background-color:transparent;
+  width: 230px;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-top: -5px;
+ 
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 10px;
+}
+
+
+
+.Contenedor{
+    display: flex;
+    background-color: #EFF0F5;
+    width: 100%;
+    justify-content: center; /* Centra horizontalmente */
+    height: 400px;
+}
+@media screen and (max-width: 768px) {
+    .Contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centra horizontalmente */
+
+
+    }
+}
+
+
+.productIMG {
+    height: 300px;
+    margin-top: 6   0px;
+    
+}
+
+#foto{
+    border-radius: 20px;
+}
+
+
+.product {
+    text-align: center;
+    height: 100%;
+    margin-left: 80px;
+}
+
+
+.product select, .product input {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;  
+}
+
+.product button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;  
+
+}
+
+
+</style>
+
+
+
+
+
+
+<body>
+    
+    <div class="navbar">
+
+                <!--Logo-->
+        <div class="logo"><img src="Imagenes/Logo.png" width="50px" height="40px"></div>
+
+            <!--Barra Busqueda-->
+            <div class="search">
+                <input placeholder="Search..." type="text">
+                <button type="submit">Go</button>
+            </div>
+
+            <!--Botones-->
+            <div class="button-container">
+                <button class="button">
+                    <img src="Imagenes/casa (2).png">
+                </button>
+                
+                <button class="button">
+                    <img src="Imagenes/usuario (1).png">
+                </button>
+            
+                <a href="file:///C:/Users/User/Documents/Online-Commerce-Scrum/Carrito2.html">
+                <button class="button"> 
+                    <img src="Imagenes/carrito-de-compras (2).png">
+                </button>
+                </a>
+            </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="Contenedor">"  
+
+        <div class="productIMG">
+        <img src="Imagenes/Producto4.webp" id="foto" width="100%" height="100%" alt="Producto">
+        </div>
+
+        
+        <div class="product">
+            <h2>Nombre del Producto</h2>
+            <p>Descripción del Producto</p>
+            <label for="color">Color:</label>
+            <select id="color" name="color">
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <!-- Agrega más opciones según los colores disponibles -->
+            </select>
+            <br>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+            <br>
+            <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+            <button onclick="comprarAhora()">Comprar Ahora</button>
+        </div>
+
+    </div>
+
+        
+
+    <script>
+        
+        function agregarAlCarrito() {
+            var colorSeleccionado = document.getElementById("color").value;
+            var cantidadSeleccionada = document.getElementById("cantidad").value;
+
+            // Aquí puedes agregar la lógica para agregar el producto al carrito
+        }
+
+        function comprarAhora() {
+            var colorSeleccionado = document.getElementById("color").value;
+            var cantidadSeleccionada = document.getElementById("cantidad").value;
+
+            // Aquí puedes agregar la lógica para llevar al usuario a la página de compra
+        }
+
+
+    </script>
+
+    
+
+
+</body>
+</html>

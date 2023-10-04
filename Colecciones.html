@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body{
+  background-color: #ffffff;
+
+
+}
+    
+
+.Head {
+    background-color: #fcbf4f;
+    max-width: 100%;
+    display: flex;
+    padding: 20px;
+
+}
+
+
+.search {
+  display: inline-block;
+  position: relative;
+  margin-top: 0px;
+  margin: auto;
+}
+
+
+.search input[type="text"] {    
+  width: 300px;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 768px) {
+    .search input {
+        max-width: 200px;
+
+    }
+}
+
+.search button[type="submit"] {
+  background-color: #f8a232;
+  height: 50px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .9s ease;
+}
+
+.search button[type="submit"]:hover {
+  transform: scale(1.1);
+  color: rgb(255, 255, 255);
+  background-color: blue;
+}
+
+.button-container {
+  display: flex;
+  background-color:transparent;
+  max-width: 10%;
+  height: 50px;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-left: auto; /* Empuja el contenedor hacia el lado derecho */
+}
+@media screen and (max-width: 768px) {
+    .button-container {
+        margin-right: 23px;
+    }
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 10px;
+}
+
+.collections {
+    text-align: center;
+}
+
+.filter-button {
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: #fcbf4f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.colecciones {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.producto {
+    display: inline-block;
+    margin: 10px;
+    max-width: 300px;
+}
+
+.producto img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.producto h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.producto p {
+    font-size: 0.9em;
+}
+
+
+/* pie de pagina */
+.page {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+}
+
+.type {
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilos para pantallas más pequeñas (menos de 768px) */
+@media screen and (max-width: 768px) {
+    .page {
+        padding: 10px;
+        margin-top: 300px;
+    }
+}
+
+
+
+
+</style>
+
+<body>
+    
+    <div class="Head">
+
+            <!--Logo-->
+        <div class="logo"><img src="Imagenes/Logo.png" width="50px" height="40px"></div>
+
+          <!--Barra Busqueda-->
+        <div class="search">
+            <input placeholder="Search..." type="text">
+            <button type="submit">Go</button>
+        </div>
+
+          <!--Botones-->
+        <div class="button-container">
+            <button class="button">
+                <img src="Imagenes/casa (2).png">
+            </button>
+              
+            <button class="button">
+                <img src="Imagenes/usuario (1).png">
+            </button>
+        
+            <a href="file:///C:/Users/User/Documents/Online-Commerce-Scrum/Carrito2.html">
+            <button class="button"> 
+                <img src="Imagenes/carrito-de-compras (2).png">
+            </button>
+            </a>
+        </div>
+
+    </div>
+
+
+    <!--Cuerpo-->
+
+    <section class="collections">
+        <h2>Colecciones</h2>
+        
+        <div class="filter-options">
+            <button class="filter-button" data-filter="all">Todas</button>
+            <button class="filter-button" data-filter="ropa">Ropa</button>
+            <button class="filter-button" data-filter="accesorios">Accesorios</button>
+            <button class="filter-button" data-filter="zapatos">Zapatos</button>
+        </div>
+      
+        <div class="colecciones">
+            <h2>Tiendas Destacadas</h2>
+            
+            <div class="producto">
+                <img src="Imagenes/Producto2.webp" alt="Producto 1">
+                <h3>Equipos de Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            
+            <div class="producto">
+                <img src="Imagenes/Producto5.webp" alt="Producto 2">
+                <h3>Ropa Deportiva para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+           
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 4">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+          
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 5">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+         
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+            <div class="producto">
+                <img src="Imagenes/P_Gafas.webp" alt="Producto 3">
+                <h3>Calzado Específico para Futsal</h3>
+                <p>Descripción del producto...</p>
+            </div>
+        </div>
+        
+
+        <footer class="page padding trim">
+            <div class="type">
+                <p class="text-center">© 2021 Online Commerce. Todos los derechos reservados.</p>
+                <p class="text-center">Calle Principal 123, Ciudad, Estado</p>
+                <p class="text-center">Teléfono: 123-456-7890</p>
+                <p class="text-center">Correo electrónico: info@onlinecommerce.com</p>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>
