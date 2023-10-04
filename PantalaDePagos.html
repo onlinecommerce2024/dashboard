@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+    
+
+    .navbar {
+        background-color: #fcbf4f;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 2px #dfdede;
+        margin-bottom: 20px;
+        max-width: 100%;
+      }
+
+  
+    
+    .button-container {
+      display: flex;
+      background-color:transparent;
+      width: 230px;
+      height: 50px;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 10px;
+      margin-top: -5px;
+     
+    }
+    
+    .button {
+      outline: 0 !important;
+      border: 0 !important;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000000;
+      transition: all ease-in-out 0.3s;
+      cursor: pointer;
+    }
+    
+    .button:hover {
+      transform: translateY(-3px);
+    }
+    
+    .icon {
+      font-size: 10px;
+    }
+    
+
+
+
+
+
+
+
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resumen-pedido, .entrega {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button.boton-pagar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button.boton-pagar:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+
+<body>
+
+
+    <div class="navbar">
+
+        <!--Logo-->
+    <div class="logo"><img src="Imagenes/Logo.png" width="50px" height="40px"></div>
+
+      <!--Barra Busqueda-->
+    
+
+      <!--Botones-->
+    <div class="button-container">
+        <button class="button">
+            <img src="Imagenes/casa (2).png">
+        </button>
+          
+        <button class="button">
+            <img src="Imagenes/usuario (1).png">
+        </button>
+    
+        <a href="file:///C:/Users/User/Documents/Online-Commerce-Scrum/Carrito2.html">
+        <button class="button"> 
+            <img src="Imagenes/carrito-de-compras (2).png">
+        </button>
+        </a>
+    </div>
+
+</div>
+
+
+    <div class="contenedor">
+        <div class="resumen-pedido">
+            <h2>Mostrar resumen del pedido</h2>
+            <p>$196,892.64</p>
+
+           
+        </div>
+
+        <div class="entrega">
+            <h2>Entrega</h2>
+            <label>
+                País:
+                <select>
+                    <option value="colombia">Colombia</option>
+                    <!-- Agregar más países según sea necesario -->
+                </select>
+            </label>
+            <br>
+            <label>
+                Nombre (opcional):
+                <input type="text">
+            </label>
+            <br>
+            <label>
+                Apellido:
+                <input type="text">
+            </label>
+            <br>
+            <label>
+                Dirección:
+                <input type="text">
+            </label>
+            <br>
+            <!-- Agregar más campos de dirección según sea necesario -->
+            <label>
+                Código postal:
+                <input type="text">
+            </label>
+            <br>
+        </div>
+
+        <!-- Agregar secciones para el método de envío y método de pago -->
+
+        <div class="resumen-pedido">
+            <h2>Resumen del pedido</h2>
+            <!-- Agregar información del carrito de compras -->
+            <button class="boton-pagar">Pagar ahora</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+    
+</body>
+</html>
