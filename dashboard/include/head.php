@@ -102,7 +102,7 @@ body{
 <div class="Head">
 
     <!--Logo-->
-    <div class="logo"><img src="./dashboard/assets/images/Logo.png" width="50px" height="40px"></div>
+    <div class="logo" uk-tooltip="Inicio"><img src="./dashboard/assets/images/Logo.png" width="50px" height="40px"></div>
 
 
 
@@ -124,21 +124,21 @@ body{
 
     <!--Botones-->
     <div class="button-container">
-    <a href="?module=home">
+    <a href="?module=home" uk-tooltip="Inicio">
     <button class="button">
         <img src="./dashboard/assets/images/casa (2).png">
     </button>
     </a>
 
-      <a href="?module=perfil">
+      <a href="?module=perfil"  uk-tooltip="<?php echo $_SESSION['nombre']; ?>">
         <button class="button"> 
             <img src="./dashboard/assets/images/usuario (1).png">
         </button>
       </a>
-      <a href="?close=1">
+      <a href="?close=1"  uk-tooltip="Salir de la sesión">
         <button class="button"> <i uk-icon="sign-in"></i>    </button>
       </a>
-      <a href="?module=compras">
+      <a href="?module=compras" uk-tooltip="Ver compras">
     <button class="button"> 
         <img src="./dashboard/assets/images/carrito-de-compras (2).png">
     </button>
@@ -155,7 +155,7 @@ body{
     <button type="submit">Go</button> -->
     </div>
     <a href="?">
-      <button class="button"> 
+      <button class="button" uk-tooltip="Iniciar sesión"> 
           <img src="./dashboard/assets/images/usuario (1).png">
       </button>
     </a>

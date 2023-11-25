@@ -1,5 +1,33 @@
 <?php  
+    // ini_set('display_errors', 1);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
+    error_reporting(0);
     session_start();
+    require_once('./dashboard/include/config.php');
+
+    include('./session.php');
+
+    $conexion = new Conexion();
+
+    $conexion->create_conexion();
+    $session = new session();
+
+    if($_POST['correo'] != NULL and $_POST['password'] != NULL){
+
+      require_once('./dashboard/include/config.php');
+  
+      $session->crear_sesion();
+  
+    }elseif ($_GET['close'] == 1) {
+        # code...
+        $session->quitar_sesion();
+    }
+    else{
+      $session->validar_sesion();
+        // validar_sesion($datos,$conexion);
+    }
+
 
 ?>
 
@@ -18,6 +46,10 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit-icons.min.js"></script>
 <link rel="icon" href="./dashboard/assets/images/Logo.png" type="image/gif" sizes="16x16">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+
 </head>
 <body>  
 
@@ -406,10 +438,9 @@ svg {
 <?php 
 
 include('./dashboard/include/head.php');
-include('./session.php');
 
 
-if($_SESSION['rol'] == 'admin'){
+if($_SESSION['id'] != NULL){
     // include('module/admin');
     // echo "Se tiene una sesion abierta";
 }else{
@@ -434,7 +465,9 @@ if($_SESSION['rol'] == 'admin'){
 
 if($_GET['module'] != NULL){
     include('./dashboard/modules/'.$_GET['module'].'/runner.php');
-
+    if($_GET['actions'] != NULL){
+      include('./dashboard/include/actions/'.$_GET['module'].'.php');
+    }
 }else{
     include('./dashboard/modules/home/runner.php');
 

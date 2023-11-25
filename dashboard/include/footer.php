@@ -270,7 +270,7 @@ body{
 
 <footer class="page padding trim">
       <div class="type">
-          <p class="text-center">© 2021 Online Commerce. Todos los derechos reservados.</p>
+          <p class="text-center">© 2023 Online Commerce. Todos los derechos reservados.</p>
           <p class="text-center">Calle Principal 123, Ciudad, Estado</p>
           <p class="text-center">Teléfono: 123-456-7890</p>
           <p class="text-center">Correo electrónico: info@onlinecommerce.com</p>

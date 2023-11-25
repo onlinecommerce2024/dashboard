@@ -1,11 +1,10 @@
 
 
     <!--Fondo-->
-  <div class="Contenedor" style="background-image: url(./dashboard/imagenes/ElFondo\(1\).jpg);">
+  <div class="Contenedor" style="background-image: url(./dashboard/imagenes/fondo.png);">
 
 
-    <!--Fondo-->
-  <!-- <div class="Contenedor" style="background-image: url(./.../.././dashboard/imagenes/ElFondo\(1\).jpg);"> -->
+  
 
 
       <div class="uk-inline">
@@ -21,12 +20,6 @@
                 <li><a href="#">Item</a></li>
             </ul>
         </div>
-
-
-
-
-
-        
       </div>
 
 
