@@ -1,0 +1,1 @@
+jsonpFooterCallback({&quot;countryCode&quot;:&quot;ES&quot;,&quot;countryName&quot;:&quot;SPAIN&quot;,&quot;ip&quot;:&quot;2.19.163.11&quot;,&quot;lang&quot;:&quot;es&quot;,&quot;latitude&quot;:&quot;40.42526&quot;,&quot;longitude&quot;:&quot;-3.69063&quot;,&quot;regionCode&quot;:&quot;8724001900000000&quot;,&quot;regionName&quot;:&quot;Comunidad de Madrid&quot;})
