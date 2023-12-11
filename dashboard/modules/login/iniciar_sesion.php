@@ -312,7 +312,9 @@
 }
 
 
-    
+#boton-iniciar{
+  width: 40% !important;
+}
 
 </style>
 
@@ -341,7 +343,9 @@
           </div>
           <span class="span">Olvido Contraseña?</span>
         </div>
+        <center>
         <button class="button-submit" id="boton-iniciar">Iniciar Sesion</button>
+        </center>
         <p class="p">No tienes una cuenta? <span class="span"><a href="?action=register">Registrarse</a></span>
     
         </p><p class="p line">O Con</p>

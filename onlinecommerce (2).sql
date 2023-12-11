@@ -85,19 +85,6 @@ INSERT INTO `detallepedido` (`idDetallePedido`, `OrdenPedido_idOrdenPedido`, `ca
 --
 -- Disparadores `detallepedido`
 --
-DELIMITER $$
-CREATE TRIGGER `ActualizarTotal` AFTER INSERT ON `detallepedido` FOR EACH ROW BEGIN
-	
-	UPDATE  ordenpedido 
-	SET total =(
-	SELECT SUM(precioUnitario*cantidad)
-	FROM detallepedido
-	WHERE detallepedido.`OrdenPedido_idOrdenPedido` = ordenPedido.`idOrdenPedido`
-);
-	
-    END
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -489,41 +476,6 @@ CREATE TABLE `vs_ventasdetails` (
 ,`nombreLocal` varchar(45)
 ,`montoTotal` int(11)
 );
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `vs_invenariodetails`
---
-DROP TABLE IF EXISTS `vs_invenariodetails`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vs_invenariodetails`  AS   (select `local`.`nombreLocal` AS `nombreLocal`,`producto`.`nombreProducto` AS `nombreProducto`,`inventario`.`Stock` AS `Stock`,`tipomovimiento`.`descripcion` AS `descripcion` from (((`inventario` join `local` on(`inventario`.`idLocal` = `local`.`idLocal`)) join `producto` on(`inventario`.`Producto_idProducto` = `producto`.`idProducto`)) join `tipomovimiento` on(`inventario`.`idTipoMovimiento` = `tipomovimiento`.`idTipoMovimiento`)))  ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `vs_usuariosroles`
---
-DROP TABLE IF EXISTS `vs_usuariosroles`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vs_usuariosroles`  AS   (select `usuarios`.`nombre` AS `nombre`,`usuarios`.`cedula` AS `cedula`,`rol`.`descripcion` AS `descripcion` from (`usuarios` join `rol` on(`usuarios`.`Rol_idRol` = `rol`.`idRol`)))  ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `vs_ventasdetails`
---
-DROP TABLE IF EXISTS `vs_ventasdetails`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vs_ventasdetails`  AS   (select `ventas`.`idVentas` AS `idVentas`,`factura`.`idFactura` AS `idFactura`,`ventas`.`fecha` AS `fecha`,`local`.`nombreLocal` AS `nombreLocal`,`factura`.`montoTotal` AS `montoTotal` from ((`ventas` join `factura` on(`ventas`.`Factura_idFactura` = `factura`.`idFactura`)) join `local` on(`ventas`.`Local_idLocal` = `local`.`idLocal`)))  ;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `categoria`
---
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`idCategoria`);
 

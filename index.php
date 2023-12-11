@@ -36,11 +36,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ONLINE COMMERCE</title>
 
 <!-- UIkit CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/css/uikit.min.css" />
+<link rel="stylesheet" type="text/css" href="theme-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="theme-assets/vendors/css/charts/chartist.css">
+    <!-- END VENDOR CSS-->      
 
+
+    <!-- BEGIN CHAMELEON  CSS-->
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/app-lite.css">
+    <!-- END CHAMELEON  CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/pages/dashboard-ecommerce.css">
 
 <!-- UIkit JS -->
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit.min.js"></script>
@@ -48,6 +60,7 @@
 <link rel="icon" href="./dashboard/assets/images/Logo.png" type="image/gif" sizes="16x16">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 
 </head>
@@ -410,17 +423,16 @@ svg {
     font-family: Arial, sans-serif;
     color: #333;
     border-top: 1px solid #ccc;
-    margin-top: 40px;
 }
 
-.type {
+/* .type {
     margin-top: 20px;
-}
+} */
 
-.text-center {
+/* .text-center {
     text-align: center;
     margin-bottom: 10px;
-}
+} */
 
 /* Estilos para pantallas más pequeñas (menos de 768px) */
 @media screen and (max-width: 768px) {
@@ -431,8 +443,40 @@ svg {
 }
 
 
+button {
+  /* Para que el texto sea más pequeño */
+  font-size: 0.9rem;
+  /* Para que el texto no quede tan pegado al borde del input */
+  padding: 0.3rem;
+}
+/* Botones */
+button {
+  background: #026aa7;
+  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  color: #ddd;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.6), 0 0 8px 0 rgba(0, 0, 0, 0.5);
+}
+button:active {
+  box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* header, #content-page {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+        } */
 
-
+  footer {
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+  }
 
 </style>
 <?php 
@@ -488,6 +532,7 @@ if($_GET['module'] != NULL){
 include('./dashboard/include/footer.php');
 
 ?>
+
 
 
 
