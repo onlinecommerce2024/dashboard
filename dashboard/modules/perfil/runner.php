@@ -246,6 +246,12 @@
                     <?php
         
 
+                        }else if($rol == 1){
+                            ?>
+                            <li>Administrar plataforma <br><a href="?module=admin"><button
+                                    class="uk-button uk-button-text tendero add-store-button">Administrar</button></a></li>
+                            <br>
+                            <?php
                         }else{
                             ?>
 

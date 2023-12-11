@@ -45,6 +45,9 @@ class conexion{
         } else {
             // echo "Conexión exitosa";
         }
+
+        return $this->conexion;
+
     }
 
     public function consultar($query){

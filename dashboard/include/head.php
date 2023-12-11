@@ -118,7 +118,7 @@ body{
 
         <!--Barra Busqueda-->
         <div class="search">
-    <input placeholder="Search..." type="text">
+    <input placeholder="Buscar" type="text">
     <button type="submit">Go</button>
     </div>
 

@@ -47,7 +47,7 @@ error_reporting(E_ALL);
             $ruta_imagen = '';
         }
 
-        $_POST['logo_tienda'] = $ruta_imagen;
+        $_POST['imagen'] = $ruta_imagen;
 
         $datos = $_POST;
 
@@ -56,28 +56,16 @@ error_reporting(E_ALL);
         $valores = "'" . implode("', '", $datos) . "'";
         
 
-        if($_GET['tipo'] == 'tendero'){
-            $tabla = 'local';
-            $dato_rol = 2;
-        }elseif ($_GET['tipo'] == 'domiciliario') {
-            # code...
-            $tabla = 'domiciliario';
-            $dato_rol = 3;
 
-        }else{
 
-        }
-
-        $consulta = "INSERT INTO local ($columnas) VALUES ($valores)";
+        $consulta = "INSERT INTO producto ($columnas) VALUES ($valores)";
     
         echo $consulta;
         if ($conexion->consultar($consulta)) {
+        
+
             
 
-            $consulta = "UPDATE usuarios SET Rol_idRol = {$dato_rol} WHERE idUsuarios = {$_SESSION['id']}";
-
-
-            if($conexion->consultar($consulta)){
                 echo "Los datos han sido guardados correctamente. {$consulta}";
     
                 echo '<script>
@@ -86,24 +74,12 @@ error_reporting(E_ALL);
         
                 setTimeout(function() {
     
-                    window.location.href = "?modulo=blog";
+                    window.location.href = "?module=tienda&tipo=productos";
     
         
                 }, 1000);
         
                 </script>';
-            }else{
-                // echo "Error al guardar los datos: ".$consulta . mysqli_error($conexion);
-                echo '<script>
-        
-                var notifications = UIkit.notification(\'Algo salio mal intentalo nuevamente\', \'danger\');
-                setTimeout(function() {
-
-                    // window.location.href = "?modulo=blog";
-                }, 1000);
-        
-                </script>';
-            }
 
 
         } else {
@@ -123,6 +99,54 @@ error_reporting(E_ALL);
     }   
 
 
+    function quitar(){
+
+        $conexion = new Conexion();
+        $conexion->create_conexion();
+
+        $id_producto = $_GET['id_producto'];
+
+        $consulta = "UPDATE producto SET deleted = 1 WHERE idProducto = {$id_producto}";
+    
+
+        if ($conexion->consultar($consulta)) {
+        
+
+            
+
+                echo "Los datos han sido guardados correctamente. {$consulta}";
+    
+                echo '<script>
+        
+                var notifications = UIkit.notification(\'Registro guardado exitosamente\', \'success\');
+        
+                setTimeout(function() {
+    
+                    window.location.href = "?module=tienda&tipo=productos";
+    
+        
+                }, 1000);
+        
+                </script>';
+
+
+        } else {
+    
+            // echo "Error al guardar los datos: ".$consulta . mysqli_error($conexion);
+            echo '<script>
+    
+            var notifications = UIkit.notification(\'Algo salio mal intentalo nuevamente\', \'danger\');
+            setTimeout(function() {
+
+                // window.location.href = "?modulo=blog";
+            }, 1000);
+    
+            </script>';
+    
+        }
+    }
+
+
     function actualizar_perfil($conexion){
 
     }
@@ -132,7 +156,7 @@ error_reporting(E_ALL);
 
         $actions = $_GET['actions'] ;
 
-        $actions($conexion);
+        $actions();
 
     }else{  
 

@@ -367,10 +367,10 @@ $conexion->create_conexion();
     <?php 
                 if($_REQUEST['filtro'] == 'buscar'){
 
-                    $sql = "SELECT * FROM producto WHERE descripcion LIKE '%{$_REQUEST['dato']}%' and id_usuario='{$_SESSION['id']}' and deleted = 0 or nombreProducto LIKE '%{$_REQUEST['dato']}%' and id_usuario='{$_SESSION['id']}' and deleted = 0";
+                    $sql = "SELECT * FROM producto WHERE descripcion LIKE '%{$_REQUEST['dato']}%'  and deleted = 0 or nombreProducto LIKE '%{$_REQUEST['dato']}%' and  deleted = 0";
     
                 }else{
-                    $sql = "SELECT * FROM producto WHERE id_usuario='{$_SESSION['id']}' and deleted = 0";
+                    $sql = "SELECT * FROM producto WHERE  deleted = 0";
     
                 }
     
@@ -383,7 +383,7 @@ $conexion->create_conexion();
     <button class="add-store-button" onclick="generarPDF()">PDF <i uk-icon="file-pdf"></i></button>
     <button class="add-store-button" onclick="imprimir()">Print <i uk-icon="print"></i></button>
 
-            <form action="?module=tienda&tipo=productos" method="post" class="uk-search uk-search-navbar">
+            <form action="?module=admin&tipo=productos" method="post" class="uk-search uk-search-navbar">
                 <span uk-search-icon></span>
                 <input type="text" hidden name="filtro" value="buscar">
                 <input class="uk-search-input" type="search" placeholder="Nombre del producto" name="dato" aria-label="Search">

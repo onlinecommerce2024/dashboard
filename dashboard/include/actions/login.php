@@ -21,7 +21,8 @@ $id = $_REQUEST['id'];
 
 function registro_usuario($tipo,$id,$datos,$conexion) {
 
-
+    $conexion = new Conexion();
+    $conexion->create_conexion();
 
     $columnas = implode(", ", array_keys($datos));
     $valores = "'" . implode("', '", $datos) . "'";
@@ -35,10 +36,9 @@ function registro_usuario($tipo,$id,$datos,$conexion) {
     // Insertar datos en la base de datos
     
     
-    
 
     
-    if (mysqli_query($conexion, $consulta)) {
+    if ($conexion->consultar($consulta)) {
         echo "Los datos han sido guardados correctamente.";
 
 

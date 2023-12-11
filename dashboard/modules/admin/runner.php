@@ -59,10 +59,14 @@ body {
         <!-- <div class="logo">
         </div> -->
         <div class="menu" >
-            <a href="?module=tienda&tipo=ventas" class="active uk-animation-toggle" uk-tooltip="title: Ventas; pos: right"><i uk-icon="cart" class="uk-animation-slide-right"></i></a>
-            <a href="?module=tienda&tipo=productos" class="uk-animation-toggle" uk-tooltip="title: Productos; pos: right" ><i uk-icon="tag" class="uk-animation-slide-right"></i></a>
-            <a href="?module=tienda&tipo=tienda" class="uk-animation-toggle" uk-tooltip="title: Mi tienda; pos: right"><i uk-icon="home"  class="uk-animation-slide-right"></i></a>
-            <a href="?module=tienda&tipo=solicitudes" class="uk-animation-toggle" uk-tooltip="title: Solicitudes; pos: right"><i uk-icon="comments"  class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=ventas" class="active uk-animation-toggle" uk-tooltip="title: Ventas; pos: right"><i uk-icon="cart" class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=productos" class="uk-animation-toggle" uk-tooltip="title: Productos; pos: right" ><i uk-icon="tag" class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=tiendas" class="uk-animation-toggle" uk-tooltip="title: Tiendas; pos: right"><i uk-icon="home"  class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=solicitudes" class="uk-animation-toggle" uk-tooltip="title: Solicitudes; pos: right"><i uk-icon="comments"  class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=solicitudes" class="uk-animation-toggle" uk-tooltip="title: Parametros; pos: right"><i uk-icon="cog"  class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=solicitudes" class="uk-animation-toggle" uk-tooltip="title: Usuarios; pos: right"><i uk-icon="user"  class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=solicitudes" class="uk-animation-toggle" uk-tooltip="title: Estadisticas; pos: right"><i uk-icon="database"  class="uk-animation-slide-right"></i></a>
+            <a href="?module=admin&tipo=solicitudes" class="uk-animation-toggle" uk-tooltip="title: Pedidos; pos: right"><i uk-icon="cart"  class="uk-animation-slide-right"></i></a>
             <!-- Agrega más elementos según tus necesidades -->
         </div>
     </div>
@@ -77,11 +81,11 @@ body {
             if($_GET['tipo'] != NULL){
                 include('./dashboard/modules/'.$_GET['module'].'/'.$_GET['tipo'].'.php');
             }else{
-                include('./dashboard/modules/tienda/ventas.php');
+                include('./dashboard/modules/admin/ventas.php');
 
             }
 
-            if($_SESSION['rol'] != 3){
+            if($_SESSION['rol'] != 1){
                 echo '<script>
     
                 var notifications = UIkit.notification(\'Estas intentando ingresar de manera incorrecta a la plataforma.\', \'danger\');

@@ -362,6 +362,8 @@ svg {
 
 .card .card__image {
   flex: 1;
+  background: url('/dashboard/imagenes/tiendas.png') no-repeat;
+
 
 }
 
@@ -375,6 +377,7 @@ svg {
 }
 
 .barra-productos {
+    justify-content: center;
     display: flex;
     max-width: 100%;
     margin-left: 45px;
