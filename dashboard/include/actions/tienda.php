@@ -97,7 +97,9 @@ error_reporting(E_ALL);
     
         }
     }   
-
+    function actualizar_producto(){
+        
+    }
 
     function quitar(){
 

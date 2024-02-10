@@ -454,7 +454,9 @@ $conexion->create_conexion();
             <td><img src="<?php echo $imagen; ?>" alt="Producto 1"></td>
             <td><?php echo $row['nombreProducto']; ?></td>
             <td>$  <?php echo $row['precio']; ?></td>
-            <td><a href="?actions=quitar&module=tienda&id_producto=<?php echo $row['idProducto'] ?>"><button class="eliminar" >Eliminar</button></a></td>
+            <td>    <button class="add-store-button" uk-icon="file-edit" uk-toggle="target: #modal-productos" onclick="editar_producto('<?php echo $row['idProducto'] ?>')">Actualizar</button>
+
+                <br><a href="?actions=quitar&module=tienda&id_producto=<?php echo $row['idProducto'] ?>"><button class="eliminar" >Eliminar</button></a></td>
         </tr>
         
 
@@ -487,6 +489,17 @@ $conexion->create_conexion();
         $.get('dashboard/include/modals/productos.php?action=agregar', function(data) {
             $('#contenido-producto').html(data);
         });
+
+
+
+    }
+
+    function editar_producto(id) {
+
+
+    $.get('dashboard/include/modals/productos.php?action=editar&id='+id, function(data) {
+        $('#contenido-producto').html(data);
+    });
 
 
 

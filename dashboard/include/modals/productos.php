@@ -111,7 +111,7 @@ function agregar($conexion){
 
 function ver($id,$conexion){
 
-    $sql_producto  = "SELECT * FROM productos WHERE id={$id} and deleted = 0";
+    $sql_producto  = "SELECT * FROM producto WHERE idProducto={$id} and deleted = 0";
     $result_producto = $conexion->query($sql_producto);
 
     if ($result_producto->num_rows > 0) {
@@ -200,8 +200,8 @@ function ver($id,$conexion){
 
 function editar($id,$conexion){
 
-    $sql_producto  = "SELECT * FROM productos WHERE id={$id} and deleted = 0";
-    $result_producto = $conexion->query($sql_producto);
+    $sql_producto  = "SELECT * FROM producto WHERE idProducto={$id} and deleted = 0";
+    $result_producto = $conexion->consultar($sql_producto);
 
     if ($result_producto->num_rows > 0) {
 
@@ -215,7 +215,7 @@ function editar($id,$conexion){
                         <h2 class="uk-modal-title">Editar producto</h2>
                     </div>
 
-                    <form action="?modulo=refresh_data&action=editar_producto&id_producto=<?php echo $row['id']; ?>" method="post" enctype="multipart/form-data" >
+                    <form action="?module=tienda&action=editar_producto&id_producto=<?php echo $row['idProducto']; ?>" method="post" enctype="multipart/form-data" >
 
                         <div class="uk-modal-body">
                         
@@ -240,7 +240,7 @@ function editar($id,$conexion){
                                     Producto</label>
                                 <div class="uk-form-controls">
                                     <input required  class="uk-input" name="nombre" id="form-stacked-text"
-                                        type="text" value="<?php echo $row['nombre']; ?>" placeholder="Ejemplo : Buzo coler">
+                                        type="text" value="<?php echo $row['nombreProducto']; ?>" placeholder="Ejemplo : Buzo coler">
                                 </div>
                             </div>
 
@@ -259,18 +259,13 @@ function editar($id,$conexion){
 
 
 
+                  
                             <div class="uk-margin">
-                                <?php coleccion($row['id_coleccion'],$conexion); ?>
-                                <?php coleccion(NULL,$conexion); ?>
-                            </div>                                    
-                            <div class="uk-margin">
-                                <?php categoria($row['id_categoria'],$conexion); ?>
+                                <?php categoria($row['Categoria_idCategoria'],$conexion); ?>
                                 <?php categoria(NULL,$conexion); ?>
+
                             </div>                                         
-                            <div class="uk-margin">
-                                <?php subcategoria($row['id_subcategoria'],$conexion); ?>
-                                <?php subcategoria(NULL,$conexion); ?>
-                            </div>     
+
 
 
 

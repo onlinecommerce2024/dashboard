@@ -81,17 +81,17 @@ body {
 
             }
 
-            if($_SESSION['rol'] != 3){
-                echo '<script>
+            // if($_SESSION['rol']){
+            //     echo '<script>
     
-                var notifications = UIkit.notification(\'Estas intentando ingresar de manera incorrecta a la plataforma.\', \'danger\');
-                setTimeout(function() {
+            //     var notifications = UIkit.notification(\'Estas intentando ingresar de manera incorrecta a la plataforma.\', \'danger\');
+            //     setTimeout(function() {
     
-                    window.location.href = "index.php";
-                }, 1000);
+            //         window.location.href = "index.php";
+            //     }, 1000);
         
-                </script>';
-            }
+            //     </script>';
+            // }
 
             ?>
 
